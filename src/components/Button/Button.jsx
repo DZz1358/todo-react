@@ -1,7 +1,9 @@
-const Button = ({ type, children, onClick }) => {
+const Button = (props) => {
+  const { className, children, type = "button" } = props;
+
   return (
-    <button className="button" type="submit">
-      Add
+    <button className={className} type={type}>
+      {children}
     </button>
   );
 };

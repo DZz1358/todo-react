@@ -1,18 +1,21 @@
 import TodoItem from "../TodoItem/TodoItem";
 
-const TodoList = () => {
-  const isHasTasks = true;
+const TodoList = ({ tasks }) => {
+  const isHasTasks = tasks && tasks.length > 0;
+  console.log("tasks", tasks);
 
   if (!isHasTasks) {
     return <div className="todo__empty-message"></div>;
   }
 
   return (
-    <div>
+    <>
       <ul className="todo__list">
-        <TodoItem />
+        {tasks.map((task) => (
+          <TodoItem className="todo__item" key={task.id} task={task} />
+        ))}
       </ul>
-    </div>
+    </>
   );
 };
 
