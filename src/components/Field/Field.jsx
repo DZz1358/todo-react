@@ -3,7 +3,7 @@ const Field = ({
   placeholder = "",
   label = "",
   value = "",
-  onChange,
+  onInput,
   id,
   className,
 }) => {
@@ -18,6 +18,8 @@ const Field = ({
         id={id}
         placeholder={placeholder}
         autoComplete="off"
+        onInput={onInput}
+        value={value}
       />
     </div>
   );

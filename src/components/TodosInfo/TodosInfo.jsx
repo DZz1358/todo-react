@@ -1,7 +1,7 @@
 import Button from "../Button/Button";
 
 const TodosInfo = (props) => {
-  const { total, done } = props;
+  const { total, done, deleteAllTask } = props;
 
   const hasTasks = total > 0;
 
@@ -11,7 +11,11 @@ const TodosInfo = (props) => {
         Done tasks: {done} from {total}
       </div>
       {hasTasks && (
-        <Button className="todo__delete-all-button" type="button">
+        <Button
+          className="todo__delete-all-button"
+          onClick={deleteAllTask}
+          type="button"
+        >
           Delete all
         </Button>
       )}
